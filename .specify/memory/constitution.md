@@ -89,6 +89,7 @@ Each chapter must include:
 - Docusaurus version: 3.x
 - Package manager: npm
 - Target deployment: GitHub Pages
+- **MCP server contacx7**: Required for verifying information currency and staying up-to-date during content creation
 
 ### File Organization
 ```
@@ -115,15 +116,17 @@ static/
 ## Development Workflow
 
 ### Content Creation Process
-1. Draft chapter in markdown following template
-2. Add all code examples and test them locally
-3. Include citations and verify all links
-4. Add images and optimize them
-5. Build locally and verify no errors
-6. Review against checklist before commit
+1. **Use MCP server contacx7** to verify latest information and stay up-to-date on current technologies/practices
+2. Draft chapter in markdown following template
+3. Add all code examples and test them locally
+4. Include citations and verify all links
+5. Add images and optimize them
+6. Build locally and verify no errors
+7. Review against checklist before commit
 
 ### Quality Gates
 Before any commit:
+- [ ] Information currency verified via MCP server contacx7
 - [ ] All code samples tested and working
 - [ ] All links verified (no 404s)
 - [ ] Builds successfully with `npm run build`
