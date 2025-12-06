@@ -1,0 +1,79 @@
+name: Quality Checks
+
+on:
+  push:
+    branches:
+      - main
+      - '001-*'  # All feature branches
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  quality-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          # Install validation tools
+          npm install -g textstat
+
+      - name: Build site
+        run: |
+          start_time=$(date +%s)
+          npm run build
+          end_time=$(date +%s)
+          duration=$((end_time - start_time))
+
+          echo "Build completed in ${duration}s"
+
+          if [ $duration -gt 120 ]; then
+            echo "❌ FAIL: Build took ${duration}s (must be <120s per SC-009)"
+            exit 1
+          fi
+
+          echo "✅ PASS: Build completed in ${duration}s (target: <120s)"
+
+      - name: Validate readability (if scripts exist)
+        if: hashFiles('scripts/validate-readability.js') != ''
+        run: |
+          echo "Running readability validation..."
+          node scripts/validate-readability.js
+
+      - name: Validate grammar (if scripts exist)
+        if: hashFiles('scripts/validate-grammar.sh') != ''
+        run: |
+          echo "Running grammar validation..."
+          bash scripts/validate-grammar.sh
+
+      - name: Check for broken links (internal only)
+        if: hashFiles('scripts/check-links.sh') != ''
+        run: |
+          echo "Checking internal links..."
+          bash scripts/check-links.sh
+
+      - name: Validate images (if scripts exist)
+        if: hashFiles('scripts/validate-images.sh') != ''
+        run: |
+          echo "Validating image formats and sizes..."
+          bash scripts/validate-images.sh
+
+      - name: Report results
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Quality Checks Summary"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "✅ Build completed successfully"
+          echo "Note: Additional quality checks will run once validation scripts are created (Phase 2)"

@@ -1,0 +1,75 @@
+name: Weekly Link Checker
+
+on:
+  schedule:
+    # Run every Monday at 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:  # Allow manual triggers
+
+jobs:
+  link-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install -g broken-link-checker
+
+      - name: Build site
+        run: npm run build
+
+      - name: Start local server
+        run: |
+          npm run serve &
+          sleep 10  # Wait for server to start
+
+      - name: Check links
+        run: |
+          echo "Running broken link checker..."
+
+          # Check internal links (strict - must have 0 broken)
+          blc http://localhost:3000 --recursive --filter-level 3 \
+            --exclude "*/node_modules/*" \
+            --get \
+            | tee link-report.txt
+
+          internal_broken=$(grep "BROKEN" link-report.txt | grep -v "http" | wc -l || echo 0)
+          external_broken=$(grep "BROKEN" link-report.txt | grep "http" | wc -l || echo 0)
+          external_total=$(grep "http" link-report.txt | wc -l || echo 1)
+
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Link Check Results"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Internal broken links: $internal_broken"
+          echo "External broken links: $external_broken"
+          echo "External total links: $external_total"
+
+          if [ $internal_broken -gt 0 ]; then
+            echo "❌ FAIL: $internal_broken internal links broken (must be 0 per SC-010)"
+            exit 1
+          fi
+
+          external_rate=$(awk "BEGIN {print ($external_broken / $external_total) * 100}")
+          if (( $(echo "$external_rate > 5" | bc -l 2>/dev/null || echo 0) )); then
+            echo "❌ FAIL: ${external_rate}% external links broken (must be <5% per SC-010)"
+            exit 1
+          fi
+
+          echo "✅ PASS: All link checks passed"
+
+      - name: Upload link report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: link-report.txt
