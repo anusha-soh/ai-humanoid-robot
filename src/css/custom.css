@@ -135,15 +135,276 @@
 }
 
 /* ============================================
-   GLOBAL TYPOGRAPHY
+   GLOBAL TYPOGRAPHY (T044-T048)
    ============================================ */
+
+/* Enhanced heading hierarchy */
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: var(--ifm-heading-letter-spacing);
+  font-weight: var(--ifm-heading-font-weight);
+  line-height: var(--ifm-heading-line-height);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
 }
 
+h1 { margin-top: 0; }
+h2 { margin-top: var(--space-12); }
+
+/* Enhanced body text readability */
+p, li {
+  line-height: var(--ifm-line-height-base);
+}
+
+/* Max line length for readability (60-80 characters) */
+article .markdown > p,
+article .markdown > ul,
+article .markdown > ol {
+  max-width: 65ch;
+}
+
+/* Enhanced code styling */
 code {
   font-size: var(--ifm-code-font-size);
   line-height: var(--ifm-code-line-height);
+  font-family: var(--ifm-font-family-monospace);
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+}
+
+/* Code blocks */
+pre code {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+pre {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--ifm-toc-border-color);
+}
+
+/* ============================================
+   NAVIGATION STYLING (T049-T052)
+   ============================================ */
+
+/* Sidebar navigation - current location indicator */
+.theme-doc-sidebar-item-link-level-1.menu__link--active,
+.theme-doc-sidebar-item-link-level-2.menu__link--active,
+.theme-doc-sidebar-item-link-level-3.menu__link--active {
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-primary);
+}
+
+/* Previous/Next navigation controls */
+.pagination-nav__link {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-background-surface-color);
+  text-decoration: none;
+}
+
+.pagination-nav__label {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.pagination-nav__sublabel {
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.875rem;
+}
+
+/* Interactive element states */
+button:hover,
+a:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+}
+
+/* Mobile collapsible sidebar */
+@media (max-width: 996px) {
+  .navbar__toggle {
+    color: var(--ifm-font-color-base);
+  }
+
+  .navbar-sidebar {
+    background-color: var(--ifm-background-color);
+  }
+
+  .navbar-sidebar__brand {
+    border-bottom: 1px solid var(--ifm-toc-border-color);
+  }
+}
+
+/* ============================================
+   CONTENT PRESENTATION (T053-T055)
+   ============================================ */
+
+/* Code syntax highlighting - harmonized with theme */
+[data-theme='light'] {
+  --prism-background-color: #f9fafb;
+  --prism-color: #111827;
+}
+
+[data-theme='dark'] {
+  --prism-background-color: #1f2937;
+  --prism-color: #f9fafb;
+}
+
+/* Images and diagrams */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--space-6) 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .markdown img {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Lists */
+.markdown ul,
+.markdown ol {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-6);
+}
+
+.markdown li {
+  margin: var(--space-2) 0;
+}
+
+.markdown li > p {
+  margin: var(--space-2) 0;
+}
+
+/* Tables */
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--space-6) 0;
+  font-size: 0.9375rem;
+}
+
+.markdown table th {
+  background-color: var(--ifm-background-surface-color);
+  font-weight: 600;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--ifm-table-border-color);
+}
+
+.markdown table td {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--ifm-table-border-color);
+}
+
+.markdown table tr:hover {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Blockquotes */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0;
+  color: var(--ifm-font-color-secondary);
+  font-style: italic;
+}
+
+/* Horizontal rules */
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--ifm-hr-border-color);
+  margin: var(--space-8) 0;
+}
+
+/* ============================================
+   RESPONSIVE LAYOUT (T056-T059)
+   ============================================ */
+
+/* Mobile base (375px+) - already defined in :root */
+
+/* Small devices (576px and up) */
+@media (min-width: 576px) {
+  :root {
+    --ifm-font-size-base: 17px;
+  }
+}
+
+/* Medium devices - Tablet (768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --ifm-font-size-base: 18px;
+  }
+
+  .container {
+    padding: 0 var(--space-6);
+  }
+
+  /* 2-column layouts where appropriate */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--space-4));
+  }
+}
+
+/* Large devices - Desktop (996px and up) */
+@media (min-width: 996px) {
+  /* Full navigation visible */
+  .navbar__items {
+    gap: var(--space-4);
+  }
+
+  /* Side-by-side content + sidebar */
+  .docMainContainer {
+    display: flex;
+  }
+
+  /* 3-column layouts for wider content */
+  .col--4 {
+    flex-basis: 33.333%;
+  }
+}
+
+/* Extra large devices (1280px and up) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 var(--space-8);
+  }
+
+  /* Larger spacing for comfortable reading */
+  article .markdown {
+    padding: var(--space-8);
+  }
+
+  h2 {
+    margin-top: var(--space-16);
+  }
 }
 
 /* ============================================
