@@ -3,6 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
+      - master
       - main
       - 001-physical-ai-book  # Deploy from feature branch during development
   workflow_dispatch:  # Allow manual triggers
