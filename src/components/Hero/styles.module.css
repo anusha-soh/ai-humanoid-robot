@@ -1,0 +1,115 @@
+/* Hero Section Styles */
+.hero {
+  background-color: var(--ifm-background-surface-color);
+  padding: var(--space-16) var(--space-4);
+  text-align: center;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.heroContent {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 2rem;
+  font-weight: var(--ifm-heading-font-weight);
+  line-height: var(--ifm-heading-line-height);
+  letter-spacing: var(--ifm-heading-letter-spacing);
+  margin: 0 0 var(--space-4) 0;
+  color: var(--ifm-font-color-base);
+}
+
+.heroTagline {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--ifm-font-color-secondary);
+  margin: 0 0 var(--space-6) 0;
+  font-weight: 500;
+}
+
+.heroDescription {
+  font-size: 1rem;
+  line-height: var(--ifm-line-height-base);
+  color: var(--ifm-font-color-secondary);
+  margin: 0 0 var(--space-8) 0;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.heroCta {
+  display: inline-block;
+  padding: var(--space-3) var(--space-8);
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.heroCta:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.heroCta:active {
+  transform: translateY(0);
+}
+
+/* Responsive Typography - Mobile First */
+
+/* Small devices (576px and up) */
+@media (min-width: 576px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+
+  .heroTagline {
+    font-size: 1.25rem;
+  }
+}
+
+/* Medium devices (768px and up) */
+@media (min-width: 768px) {
+  .hero {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroTagline {
+    font-size: 1.5rem;
+  }
+
+  .heroDescription {
+    font-size: 1.125rem;
+  }
+}
+
+/* Large devices (996px and up) */
+@media (min-width: 996px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+}
+
+/* Extra large devices (1280px and up) */
+@media (min-width: 1280px) {
+  .heroTitle {
+    font-size: 4rem;
+  }
+}

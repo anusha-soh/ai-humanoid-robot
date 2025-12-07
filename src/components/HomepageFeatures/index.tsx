@@ -1,68 +1,66 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
+import React from 'react';
 import styles from './styles.module.css';
 
-type FeatureItem = {
+// Inline SVG imports for optimal performance
+import NervousSystemIcon from '@site/static/img/icons/module-01-nervous-system.svg';
+import DigitalTwinIcon from '@site/static/img/icons/module-02-digital-twin.svg';
+import AIBrainIcon from '@site/static/img/icons/module-03-ai-brain.svg';
+import VLAIcon from '@site/static/img/icons/module-04-vla.svg';
+
+interface ModuleCardProps {
+  Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
-  description: ReactNode;
+  description: string;
+  ariaLabel: string;
+}
+
+const ModuleCard: React.FC<ModuleCardProps> = ({ Icon, title, description, ariaLabel }) => {
+  return (
+    <div className={styles.moduleCard}>
+      <div className={styles.moduleIcon}>
+        <Icon role="img" aria-label={ariaLabel} />
+      </div>
+      <h3 className={styles.moduleTitle}>{title}</h3>
+      <p className={styles.moduleDescription}>{description}</p>
+    </div>
+  );
 };
 
-const FeatureList: FeatureItem[] = [
+const modules: ModuleCardProps[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
+    Icon: NervousSystemIcon,
+    title: 'Module 1: Robotic Nervous System',
+    description: 'Master ROS 2 fundamentals—nodes, topics, services, and actions. Build distributed robotic systems with pub/sub messaging and low-level control.',
+    ariaLabel: 'ROS 2 Robotic Nervous System - Interconnected nodes representing communication',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
+    Icon: DigitalTwinIcon,
+    title: 'Module 2: Digital Twin',
+    description: 'Create realistic robot simulations in Gazebo. Design URDF models, tune physics parameters, and test algorithms in virtual environments before hardware deployment.',
+    ariaLabel: 'Gazebo Digital Twin - 3D cube representing simulation environment',
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
+    Icon: AIBrainIcon,
+    title: 'Module 3: AI-Robot Brain',
+    description: 'Integrate perception and planning with NVIDIA Isaac Sim. Implement computer vision, sensor fusion, and reinforcement learning for autonomous robot behavior.',
+    ariaLabel: 'Isaac Sim AI Brain - Camera icon representing vision and perception systems',
+  },
+  {
+    Icon: VLAIcon,
+    title: 'Module 4: Vision-Language-Action',
+    description: 'Build embodied AI agents using vision-language models. Enable robots to understand natural language commands and translate them into physical actions.',
+    ariaLabel: 'Vision-Language-Action - Brain with communication representing multimodal AI',
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
-}
-
-export default function HomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+      <div className={styles.container}>
+        <h2 className={styles.sectionTitle}>What You'll Learn</h2>
+        <div className={styles.moduleGrid}>
+          {modules.map((props, idx) => (
+            <ModuleCard key={idx} {...props} />
           ))}
         </div>
       </div>

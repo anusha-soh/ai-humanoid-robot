@@ -1,23 +1,167 @@
 /**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
+ * Landing Page Styles
+ * Feature: 002-minimal-ui-theme
  */
 
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+/* Who This Is For Section */
+.whoSection {
+  padding: var(--space-16) var(--space-4);
+  background-color: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-toc-border-color);
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+.buildSection {
+  padding: var(--space-16) var(--space-4);
+  background-color: var(--ifm-background-color);
+}
+
+.sectionContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: var(--ifm-heading-font-weight);
+  letter-spacing: var(--ifm-heading-letter-spacing);
+  margin: 0 0 var(--space-12) 0;
+  color: var(--ifm-font-color-base);
+}
+
+/* Audience Grid */
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.audienceCard {
+  background-color: var(--ifm-background-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.audienceCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-3) 0;
+  color: var(--ifm-color-primary);
+}
+
+.audienceCard p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+  margin: 0;
+}
+
+/* Prerequisites */
+.prerequisites {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prerequisites h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-4) 0;
+  color: var(--ifm-font-color-base);
+}
+
+.prerequisites ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.prerequisites li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+}
+
+.prerequisites li:before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+}
+
+/* Projects List */
+.projectsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.projectCard {
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  position: relative;
+}
+
+.projectNumber {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  opacity: 0.15;
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  line-height: 1;
+}
+
+.projectCard h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-3) 0;
+  color: var(--ifm-font-color-base);
+}
+
+.projectCard p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-secondary);
+  margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .whoSection,
+  .buildSection {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .audienceGrid,
+  .projectsList {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media (min-width: 996px) {
+  .projectsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .projectsList {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
