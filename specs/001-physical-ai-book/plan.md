@@ -7,7 +7,7 @@
 
 Create a comprehensive 16-chapter book (4 modules × 4 chapters) teaching Physical AI and Humanoid Robotics to beginner AI practitioners with no robotics background. The book follows a simulation-first approach, building from ROS 2 foundations through physics simulation, AI perception, to voice-controlled autonomous systems. All content delivered via Docusaurus static site deployed to GitHub Pages, with rigorous quality standards (Flesch-Kincaid 10-12, 75%+ active voice, <15% plagiarism, MCP server contacx7 verification).
 
-**Technical Approach**: Research-concurrent iterative development. Each module progresses through: research → draft → test code → review → refine. Modules build sequentially (Module 1 foundation enables Module 2, etc.) but chapters within modules can iterate in parallel with reader feedback loops.
+**Technical Approach**: Structure-first iterative development. Build complete book structure with placeholder chapters first, then populate with real content module-by-module. This allows early deployment, navigation testing, and progressive content delivery.
 
 ## Technical Context
 
@@ -701,9 +701,9 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 ## Implementation Phases
 
-### Phase 0: Setup (Week 1)
+### Phase 0: Infrastructure Setup (Week 1)
 
-**Goal**: Scaffold project infrastructure and establish quality gates before content creation.
+**Goal**: Scaffold project infrastructure and establish quality gates.
 
 **Tasks**:
 1. Initialize Docusaurus site
@@ -779,13 +779,62 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 ---
 
-### Phase 1: Module 1 - Robotic Nervous System (Weeks 2-5)
+### Phase 1: Complete Book Structure with Placeholders (Week 2)
+
+**Goal**: Create all 16 chapter files with placeholder content to establish complete navigation structure and enable early deployment.
+
+**Tasks**:
+1. Create placeholder files for all 16 chapters
+   - `docs/module-01/chapter-01.md` through `chapter-04.md`
+   - `docs/module-02/chapter-05.md` through `chapter-08.md`
+   - `docs/module-03/chapter-09.md` through `chapter-12.md`
+   - `docs/module-04/chapter-13.md` through `chapter-16.md`
+
+2. Each placeholder contains:
+   ```markdown
+   # Chapter X: [Title from spec]
+
+   ## Coming Soon
+
+   This chapter is currently being written. It will cover:
+   - [Learning objective 1]
+   - [Learning objective 2]
+   - [Learning objective 3]
+
+   Check back soon for complete content with code examples and exercises.
+   ```
+
+3. Create placeholder image directories:
+   - `static/img/module-XX/chapter-YY/` for all 16 chapters
+
+4. Test complete build:
+   - Verify site builds successfully with all placeholders
+   - Verify navigation works across all modules
+   - Test deployment to GitHub Pages
+   - Verify build time <2 minutes
+
+5. Deploy initial structure:
+   - Push to main branch
+   - Verify GitHub Pages deployment
+   - Confirm all links work, navigation functional
+
+**Deliverables**:
+- All 16 chapter files exist with placeholder content
+- Complete navigation structure works
+- Site deployed to GitHub Pages with placeholder structure
+- Build time <2 minutes validated
+
+**Acceptance**: Full book structure is navigable on GitHub Pages with "Coming Soon" placeholders for all chapters.
+
+---
+
+### Phase 2: Module 1 Content - Robotic Nervous System (Weeks 3-6)
 
 **Goal**: Teach ROS 2 foundations (nodes, topics, services, URDF, rclpy). Establish iterative feedback loop pattern.
 
-**Dependencies**: Phase 0 complete.
+**Dependencies**: Phase 0 and Phase 1 complete.
 
-**Content Structure** (4 chapters):
+**Content Structure** (4 chapters - replace placeholders with full content):
 
 #### Chapter 1: Welcome to Physical AI (Week 2)
 - **Overview**: Introduction to embodied intelligence, Physical AI vs Digital AI, book roadmap
@@ -854,11 +903,11 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 ---
 
-### Phase 2: Module 2 - Digital Twin (Weeks 6-9)
+### Phase 3: Module 2 Content - Digital Twin (Weeks 7-10)
 
 **Goal**: Teach physics simulation (Gazebo) and sensor simulation. Readers build realistic robot environments.
 
-**Dependencies**: Module 1 complete (readers understand ROS 2).
+**Dependencies**: Phase 2 complete (Module 1 content finished).
 
 **Content Structure** (4 chapters):
 
@@ -898,11 +947,11 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 ---
 
-### Phase 3: Module 3 - AI-Robot Brain (Weeks 10-13)
+### Phase 4: Module 3 Content - AI-Robot Brain (Weeks 11-14)
 
 **Goal**: Teach advanced perception (Isaac Sim), computer vision, SLAM, navigation. Transition from Gazebo to Isaac.
 
-**Dependencies**: Modules 1-2 complete (readers understand ROS 2 + simulation).
+**Dependencies**: Phase 3 complete (Modules 1-2 content finished).
 
 **Content Structure** (4 chapters):
 
@@ -942,11 +991,11 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 ---
 
-### Phase 4: Module 4 - Vision-Language-Action (Weeks 14-17)
+### Phase 5: Module 4 Content - Vision-Language-Action (Weeks 15-18)
 
 **Goal**: Teach LLM integration for robotics, voice control, multimodal VLA systems. Culminate in capstone project.
 
-**Dependencies**: Modules 1-3 complete (readers have full robotics stack).
+**Dependencies**: Phase 4 complete (Modules 1-3 content finished).
 
 **Content Structure** (4 chapters):
 
@@ -992,7 +1041,7 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 ---
 
-### Phase 5: Polish (Weeks 18-20)
+### Phase 6: Polish & Final Validation (Weeks 19-20)
 
 **Goal**: Final quality pass, consistency check, full validation against all success criteria.
 
@@ -1051,28 +1100,28 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 | Success Criterion | Validation Method | Expected Result | Phase |
 |-------------------|-------------------|-----------------|-------|
-| **SC-001**: 16 chapters written, reviewed, published | Manual count + git log | 16 chapters in `docs/` | Phase 5 |
-| **SC-002**: Each chapter has 4 sections | Script: check section headings | All chapters have Overview, Concepts, Examples, References | Phase 5 |
-| **SC-003**: 100% chapters have ≥3 code examples + 1 exercise | Script: count code blocks + exercises | All pass | Phase 5 |
-| **SC-004**: Flesch-Kincaid 10-12 | textstat on all chapters | All chapters score 10.0-12.0 | Phase 5 |
-| **SC-005**: 75%+ active voice, ≤25 words/sentence | LanguageTool on all chapters | All chapters pass both metrics | Phase 5 |
-| **SC-006**: All code runs successfully | Execute all code examples in Docker | Exit code 0 for all | Phase 5 |
-| **SC-007**: 100% technical claims cited | Script: check for citation links | All technical statements have `[source]` links | Phase 5 |
-| **SC-008**: <15% plagiarism | Copyscape API on all chapters | All chapters <15% similarity | Phase 5 |
+| **SC-001**: 16 chapters written, reviewed, published | Manual count + git log | 16 chapters in `docs/` | Phase 6 |
+| **SC-002**: Each chapter has 4 sections | Script: check section headings | All chapters have Overview, Concepts, Examples, References | Phase 6 |
+| **SC-003**: 100% chapters have ≥3 code examples + 1 exercise | Script: count code blocks + exercises | All pass | Phase 6 |
+| **SC-004**: Flesch-Kincaid 10-12 | textstat on all chapters | All chapters score 10.0-12.0 | Phase 6 |
+| **SC-005**: 75%+ active voice, ≤25 words/sentence | LanguageTool on all chapters | All chapters pass both metrics | Phase 6 |
+| **SC-006**: All code runs successfully | Execute all code examples in Docker | Exit code 0 for all | Phase 6 |
+| **SC-007**: 100% technical claims cited | Script: check for citation links | All technical statements have `[source]` links | Phase 6 |
+| **SC-008**: <15% plagiarism | Copyscape API on all chapters | All chapters <15% similarity | Phase 6 |
 | **SC-009**: Build <2 min, zero errors/warnings | CI/CD build metrics | Build time <120s, exit code 0 | Every commit |
 | **SC-010**: Zero internal 404s, <5% external broken | broken-link-checker | Internal: 0 broken, External: <5% | Weekly |
-| **SC-011**: Images render correctly, <500KB, WCAG AA | Image validator + pa11y | All images pass | Phase 5 |
+| **SC-011**: Images render correctly, <500KB, WCAG AA | Image validator + pa11y | All images pass | Phase 6 |
 | **SC-012**: Deployment succeeds automatically | GitHub Actions status | Green checkmark on deploy workflow | Every merge |
-| **SC-013**: Navigation: 100% links valid, state persists | Manual testing + link checker | All sidebar/cross-refs work | Phase 5 |
-| **SC-014**: Readers complete Module 1 in 2 weeks | Beta reader survey | ≥80% complete within 14 days | Phase 1 |
-| **SC-015**: 90% readers run code successfully | Beta reader survey | ≥90% report success | Phase 5 |
-| **SC-016**: Readers complete Chapter 16 capstone | Beta reader survey | 100% completion rate | Phase 4 |
-| **SC-017**: 80%+ comprehension quiz | Administer quiz to beta readers | ≥80% correct answers | Phase 5 |
+| **SC-013**: Navigation: 100% links valid, state persists | Manual testing + link checker | All sidebar/cross-refs work | Phase 1 |
+| **SC-014**: Readers complete Module 1 in 2 weeks | Beta reader survey | ≥80% complete within 14 days | Phase 2 |
+| **SC-015**: 90% readers run code successfully | Beta reader survey | ≥90% report success | Phase 6 |
+| **SC-016**: Readers complete Chapter 16 capstone | Beta reader survey | 100% completion rate | Phase 5 |
+| **SC-017**: 80%+ comprehension quiz | Administer quiz to beta readers | ≥80% correct answers | Phase 6 |
 | **SC-018**: MCP server contacx7 verification | Manual checklist | All chapters verified | Each module |
-| **SC-019**: 2+ reviewers confirm zero factual errors | Technical review sign-off | Zero errors reported | Phase 5 |
-| **SC-020**: Software versions tested and compatible | Docker environment validation | All code runs in Ubuntu 22.04 + ROS 2 Humble + Gazebo + Isaac | Phase 5 |
-| **SC-021**: Capstone integrates all 15 chapters | Code review of Chapter 16 | Uses ROS 2 + URDF + Gazebo/Isaac + sensors + perception + SLAM + Nav2 + Whisper + LLM | Phase 4 |
-| **SC-022**: Capstone demonstrates autonomous behavior | Video demo + code execution | Voice → task → navigation → detection → manipulation → reporting | Phase 4 |
+| **SC-019**: 2+ reviewers confirm zero factual errors | Technical review sign-off | Zero errors reported | Phase 6 |
+| **SC-020**: Software versions tested and compatible | Docker environment validation | All code runs in Ubuntu 22.04 + ROS 2 Humble + Gazebo + Isaac | Phase 6 |
+| **SC-021**: Capstone integrates all 15 chapters | Code review of Chapter 16 | Uses ROS 2 + URDF + Gazebo/Isaac + sensors + perception + SLAM + Nav2 + Whisper + LLM | Phase 5 |
+| **SC-022**: Capstone demonstrates autonomous behavior | Video demo + code execution | Voice → task → navigation → detection → manipulation → reporting | Phase 5 |
 
 ---
 
@@ -1095,23 +1144,30 @@ pa11y-ci --sitemap http://localhost:3000/sitemap.xml \
 
 ## Next Steps
 
-1. **Immediate**: Begin Phase 0 (Setup)
+1. **Immediate**: Begin Phase 0 (Infrastructure Setup)
    - Initialize Docusaurus site
    - Configure custom theme
    - Set up CI/CD pipelines
    - Create chapter template
 
-2. **Week 2**: Start Phase 1 (Module 1)
-   - Draft Chapter 1
+2. **Week 2**: Complete Phase 1 (Book Structure)
+   - Create all 16 placeholder chapter files
+   - Test navigation across all modules
+   - Deploy initial structure to GitHub Pages
+   - Verify build and deployment pipeline
+
+3. **Week 3**: Start Phase 2 (Module 1 Content)
+   - Replace Chapter 1 placeholder with full content
+   - Progress through Chapters 2-4
    - Recruit beta readers
    - Begin iterative feedback loop
 
-3. **Ongoing**:
+4. **Ongoing**:
    - Weekly progress reviews
    - Monthly constitution compliance audits
-   - Quarterly beta reader cohort rotations
+   - Progressive deployment (deploy each module as completed)
 
-4. **Completion Target**: Week 20 (5 months from start)
+5. **Completion Target**: Week 20 (5 months from start)
 
 **Recommended Next Command**: `/sp.tasks` to generate actionable task breakdown for Phase 0.
 
