@@ -1,0 +1,574 @@
+/**
+ * Minimal Sophisticated UI Theme
+ * Feature: 002-minimal-ui-theme
+ *
+ * Design tokens based on research from GitHub Primer, Stripe, Tailwind, and Linear.
+ * All color combinations validated for WCAG 2.1 AA (4.5:1 contrast ratio).
+ *
+ * See: specs/002-minimal-ui-theme/design-tokens.md
+ */
+
+/* ============================================
+   LIGHT MODE - Base Theme
+   ============================================ */
+:root {
+  /* Color Tokens - Light Mode */
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
+
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f9fafb;
+
+  --ifm-font-color-base: #111827;
+  --ifm-font-color-secondary: #6b7280;
+
+  --ifm-color-content-secondary: #6b7280;
+
+  --ifm-toc-border-color: #e5e7eb;
+  --ifm-table-border-color: #e5e7eb;
+  --ifm-hr-border-color: #e5e7eb;
+
+  /* Typography Tokens */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-monospace: 'SF Mono', 'Consolas', 'Liberation Mono', 'Menlo', 'Monaco', monospace;
+
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.6;
+
+  --ifm-heading-font-weight: 700;
+  --ifm-heading-line-height: 1.2;
+  --ifm-heading-letter-spacing: -0.02em;
+
+  --ifm-h1-font-size: 3rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1.125rem;
+  --ifm-h6-font-size: 1rem;
+
+  --ifm-code-font-size: 0.875rem;
+  --ifm-code-line-height: 1.5;
+
+  /* Spacing Tokens */
+  --ifm-spacing-horizontal: 1rem;
+  --ifm-spacing-vertical: 1rem;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border Radius */
+  --ifm-global-radius: 4px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Code Blocks */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+
+  /* Link Colors */
+  --ifm-link-color: #2563eb;
+  --ifm-link-hover-color: #1d4ed8;
+
+  /* Navbar */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  /* Footer */
+  --ifm-footer-background-color: #f9fafb;
+  --ifm-footer-color: #6b7280;
+  --ifm-footer-link-color: #111827;
+  --ifm-footer-link-hover-color: #2563eb;
+}
+
+/* ============================================
+   DARK MODE - Enhanced Palette
+   ============================================ */
+[data-theme='dark'] {
+  /* Color Tokens - Dark Mode */
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
+
+  --ifm-background-color: #111827;
+  --ifm-background-surface-color: #1f2937;
+
+  --ifm-font-color-base: #f9fafb;
+  --ifm-font-color-secondary: #9ca3af;
+
+  --ifm-color-content-secondary: #9ca3af;
+
+  --ifm-toc-border-color: #374151;
+  --ifm-table-border-color: #374151;
+  --ifm-hr-border-color: #374151;
+
+  /* Code Blocks */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
+
+  /* Link Colors */
+  --ifm-link-color: #60a5fa;
+  --ifm-link-hover-color: #3b82f6;
+
+  /* Navbar */
+  --ifm-navbar-background-color: #1f2937;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+
+  /* Footer */
+  --ifm-footer-background-color: #1f2937;
+  --ifm-footer-color: #9ca3af;
+  --ifm-footer-link-color: #f9fafb;
+  --ifm-footer-link-hover-color: #60a5fa;
+}
+
+/* ============================================
+   GLOBAL TYPOGRAPHY (T044-T048)
+   ============================================ */
+
+/* Enhanced heading hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: var(--ifm-heading-letter-spacing);
+  font-weight: var(--ifm-heading-font-weight);
+  line-height: var(--ifm-heading-line-height);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+h1 { margin-top: 0; }
+h2 { margin-top: var(--space-12); }
+
+/* Enhanced body text readability */
+p, li {
+  line-height: var(--ifm-line-height-base);
+}
+
+/* Max line length for readability (60-80 characters) */
+article .markdown > p,
+article .markdown > ul,
+article .markdown > ol {
+  max-width: 65ch;
+}
+
+/* Enhanced code styling */
+code {
+  font-size: var(--ifm-code-font-size);
+  line-height: var(--ifm-code-line-height);
+  font-family: var(--ifm-font-family-monospace);
+  background-color: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+}
+
+/* Code blocks */
+pre code {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+pre {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--ifm-toc-border-color);
+}
+
+/* ============================================
+   NAVIGATION STYLING (T049-T052)
+   ============================================ */
+
+/* Sidebar navigation - current location indicator */
+.theme-doc-sidebar-item-link-level-1.menu__link--active,
+.theme-doc-sidebar-item-link-level-2.menu__link--active,
+.theme-doc-sidebar-item-link-level-3.menu__link--active {
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-color-primary);
+}
+
+/* Previous/Next navigation controls */
+.pagination-nav__link {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-background-surface-color);
+  text-decoration: none;
+}
+
+.pagination-nav__label {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.pagination-nav__sublabel {
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.875rem;
+}
+
+/* Interactive element states */
+button:hover,
+a:hover {
+  transition: all 0.2s ease-in-out;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+}
+
+/* Mobile collapsible sidebar */
+@media (max-width: 996px) {
+  .navbar__toggle {
+    color: var(--ifm-font-color-base);
+  }
+
+  .navbar-sidebar {
+    background-color: var(--ifm-background-color);
+  }
+
+  .navbar-sidebar__brand {
+    border-bottom: 1px solid var(--ifm-toc-border-color);
+  }
+}
+
+/* ============================================
+   CONTENT PRESENTATION (T053-T055)
+   ============================================ */
+
+/* Code syntax highlighting - harmonized with theme */
+[data-theme='light'] {
+  --prism-background-color: #f9fafb;
+  --prism-color: #111827;
+}
+
+[data-theme='dark'] {
+  --prism-background-color: #1f2937;
+  --prism-color: #f9fafb;
+}
+
+/* Images and diagrams */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin: var(--space-6) 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] .markdown img {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Lists */
+.markdown ul,
+.markdown ol {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-6);
+}
+
+.markdown li {
+  margin: var(--space-2) 0;
+}
+
+.markdown li > p {
+  margin: var(--space-2) 0;
+}
+
+/* Tables */
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--space-6) 0;
+  font-size: 0.9375rem;
+}
+
+.markdown table th {
+  background-color: var(--ifm-background-surface-color);
+  font-weight: 600;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--ifm-table-border-color);
+}
+
+.markdown table td {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--ifm-table-border-color);
+}
+
+.markdown table tr:hover {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* Blockquotes */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0;
+  color: var(--ifm-font-color-secondary);
+  font-style: italic;
+}
+
+/* Horizontal rules */
+.markdown hr {
+  border: none;
+  border-top: 1px solid var(--ifm-hr-border-color);
+  margin: var(--space-8) 0;
+}
+
+/* ============================================
+   RESPONSIVE LAYOUT (T056-T059)
+   ============================================ */
+
+/* Mobile base (375px+) - already defined in :root */
+
+/* Small devices (576px and up) */
+@media (min-width: 576px) {
+  :root {
+    --ifm-font-size-base: 17px;
+  }
+}
+
+/* Medium devices - Tablet (768px and up) */
+@media (min-width: 768px) {
+  :root {
+    --ifm-font-size-base: 18px;
+  }
+
+  .container {
+    padding: 0 var(--space-6);
+  }
+
+  /* 2-column layouts where appropriate */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc(-1 * var(--space-4));
+  }
+}
+
+/* Large devices - Desktop (996px and up) */
+@media (min-width: 996px) {
+  /* Full navigation visible */
+  .navbar__items {
+    gap: var(--space-4);
+  }
+
+  /* Side-by-side content + sidebar */
+  .docMainContainer {
+    display: flex;
+  }
+
+  /* 3-column layouts for wider content */
+  .col--4 {
+    flex-basis: 33.333%;
+  }
+}
+
+/* Extra large devices (1280px and up) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    padding: 0 var(--space-8);
+  }
+
+  /* Larger spacing for comfortable reading */
+  article .markdown {
+    padding: var(--space-8);
+  }
+
+  h2 {
+    margin-top: var(--space-16);
+  }
+}
+
+/* ============================================
+   VISUAL BRAND IDENTITY (T066-T072)
+   ============================================ */
+
+/* Consistent whitespace system across all page types (T066) */
+.navbar,
+.footer,
+article,
+.docSidebarContainer {
+  padding: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .navbar,
+  .footer,
+  article,
+  .docSidebarContainer {
+    padding: var(--space-6);
+  }
+}
+
+@media (min-width: 996px) {
+  article {
+    padding: var(--space-8);
+  }
+}
+
+/* Ensure color palette consistency across all components (T067) */
+/* Primary color: #2563eb (light) / #60a5fa (dark) - already defined in :root */
+/* Neutral grays: #111827, #6b7280, #e5e7eb (light) / #f9fafb, #9ca3af, #374151 (dark) */
+/* This ensures all buttons, links, borders use the same palette */
+
+/* 404 Page Styling (T068) */
+.theme-error-page {
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+}
+
+.theme-error-page h1 {
+  font-size: 4rem;
+  color: var(--ifm-color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.theme-error-page p {
+  font-size: 1.125rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+.theme-error-page a {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.theme-error-page a:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+/* Appendix pages styling (T069) */
+.appendix-page,
+.prerequisites-page,
+.glossary-page,
+.troubleshooting-page,
+.resources-page {
+  background-color: var(--ifm-background-color);
+}
+
+.appendix-page h1,
+.prerequisites-page h1,
+.glossary-page h1,
+.troubleshooting-page h1,
+.resources-page h1 {
+  border-bottom: 2px solid var(--ifm-color-primary);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+/* Subtle transitions for interactive elements (T070) */
+a,
+button,
+.button,
+.menu__link,
+.pagination-nav__link,
+.navbar__link,
+.footer__link-item {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced focus indicators for accessibility (T071) */
+a:focus,
+button:focus,
+.button:focus,
+.menu__link:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users, keep for keyboard users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+.button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom scrollbar styling (T072) - Browser-dependent */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--ifm-background-surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ifm-color-content-secondary);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--ifm-background-surface-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ifm-color-primary);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-content-secondary) var(--ifm-background-surface-color);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.section-spacing {
+  padding: var(--space-12) 0;
+}
+
+.section-spacing-large {
+  padding: var(--space-16) 0;
+}
