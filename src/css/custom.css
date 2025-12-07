@@ -408,6 +408,155 @@ a:hover {
 }
 
 /* ============================================
+   VISUAL BRAND IDENTITY (T066-T072)
+   ============================================ */
+
+/* Consistent whitespace system across all page types (T066) */
+.navbar,
+.footer,
+article,
+.docSidebarContainer {
+  padding: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .navbar,
+  .footer,
+  article,
+  .docSidebarContainer {
+    padding: var(--space-6);
+  }
+}
+
+@media (min-width: 996px) {
+  article {
+    padding: var(--space-8);
+  }
+}
+
+/* Ensure color palette consistency across all components (T067) */
+/* Primary color: #2563eb (light) / #60a5fa (dark) - already defined in :root */
+/* Neutral grays: #111827, #6b7280, #e5e7eb (light) / #f9fafb, #9ca3af, #374151 (dark) */
+/* This ensures all buttons, links, borders use the same palette */
+
+/* 404 Page Styling (T068) */
+.theme-error-page {
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+}
+
+.theme-error-page h1 {
+  font-size: 4rem;
+  color: var(--ifm-color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.theme-error-page p {
+  font-size: 1.125rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+}
+
+.theme-error-page a {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--ifm-color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.theme-error-page a:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: #ffffff;
+}
+
+/* Appendix pages styling (T069) */
+.appendix-page,
+.prerequisites-page,
+.glossary-page,
+.troubleshooting-page,
+.resources-page {
+  background-color: var(--ifm-background-color);
+}
+
+.appendix-page h1,
+.prerequisites-page h1,
+.glossary-page h1,
+.troubleshooting-page h1,
+.resources-page h1 {
+  border-bottom: 2px solid var(--ifm-color-primary);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+/* Subtle transitions for interactive elements (T070) */
+a,
+button,
+.button,
+.menu__link,
+.pagination-nav__link,
+.navbar__link,
+.footer__link-item {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced focus indicators for accessibility (T071) */
+a:focus,
+button:focus,
+.button:focus,
+.menu__link:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+a:focus-visible,
+button:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users, keep for keyboard users */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+.button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Custom scrollbar styling (T072) - Browser-dependent */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--ifm-background-surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ifm-color-content-secondary);
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--ifm-background-surface-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--ifm-color-primary);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ifm-color-content-secondary) var(--ifm-background-surface-color);
+}
+
+/* ============================================
    UTILITY CLASSES
    ============================================ */
 .container {
