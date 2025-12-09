@@ -1,0 +1,3 @@
+# Voice Pipeline Diagram
+# Diagram showing the voice processing pipeline:
+# Voice Input -> Whisper STT -> NLP Processing -> ROS 2 Commands -> Robot Actions

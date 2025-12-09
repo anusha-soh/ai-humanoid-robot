@@ -93,35 +93,35 @@
 
 ### Chapter 1: Welcome to Physical AI
 
-- [ ] T033 [M1] Write complete Chapter 1 content replacing placeholder (Overview, Concepts, 3-4 code examples, exercise, references)
-- [ ] T034 [M1] Create diagram: Sense-think-act loop at static/img/module-01/chapter-01/sense-think-act.png
-- [ ] T035 [M1] Test all Chapter 1 code examples (acceptance: exit code 0, Flesch-Kincaid 10-12)
+- [X] T033 [M1] Write complete Chapter 1 content replacing placeholder (Overview, Concepts, 3-4 code examples, exercise, references)
+- [X] T034 [M1] Create diagram: Sense-think-act loop at static/img/module-01/chapter-01/sense-think-act.png
+- [X] T035 [M1] Test all Chapter 1 code examples (acceptance: exit code 0, Flesch-Kincaid 10-12)
 
 ### Chapter 2: ROS 2 Architecture
 
-- [ ] T036 [M1] Write complete Chapter 2 content replacing placeholder (Overview, Concepts on nodes/topics/services, 3-4 code examples, required exercise + 3 extensions, references)
-- [ ] T037 [M1] Create diagram: ROS 2 computation graph at static/img/module-01/chapter-02/computation-graph.png
-- [ ] T038 [M1] Test all Chapter 2 code examples and exercises
+- [X] T036 [M1] Write complete Chapter 2 content replacing placeholder (Overview, Concepts on nodes/topics/services, 3-4 code examples, required exercise + 3 extensions, references)
+- [X] T037 [M1] Create diagram: ROS 2 computation graph at static/img/module-01/chapter-02/computation-graph.png
+- [X] T038 [M1] Test all Chapter 2 code examples and exercises
 
 ### Chapter 3: Describing Robots - URDF
 
-- [ ] T039 [M1] Write complete Chapter 3 content replacing placeholder (Overview, Concepts on URDF/TF2, 3-4 code examples, exercise, references)
-- [ ] T040 [M1] Create diagram: URDF link/joint hierarchy at static/img/module-01/chapter-03/urdf-hierarchy.png
-- [ ] T041 [M1] Test all Chapter 3 code examples (acceptance: URDF renders in RViz2)
+- [X] T039 [M1] Write complete Chapter 3 content replacing placeholder (Overview, Concepts on URDF/TF2, 3-4 code examples, exercise, references)
+- [X] T040 [M1] Create diagram: URDF link/joint hierarchy at static/img/module-01/chapter-03/urdf-hierarchy.png
+- [X] T041 [M1] Test all Chapter 3 code examples (acceptance: URDF renders in RViz2)
 
 ### Chapter 4: Python + ROS 2 (rclpy)
 
-- [ ] T042 [M1] Write complete Chapter 4 content replacing placeholder (Overview, Concepts on rclpy, 3-4 code examples, exercise, references)
-- [ ] T043 [M1] Create diagram: Python-ROS 2 integration at static/img/module-01/chapter-04/python-ros2.png
-- [ ] T044 [M1] Test all Chapter 4 code examples (acceptance: robot avoids obstacles)
+- [X] T042 [M1] Write complete Chapter 4 content replacing placeholder (Overview, Concepts on rclpy, 3-4 code examples, exercise, references)
+- [X] T043 [M1] Create diagram: Python-ROS 2 integration at static/img/module-01/chapter-04/python-ros2.png
+- [X] T044 [M1] Test all Chapter 4 code examples (acceptance: robot avoids obstacles)
 
 ### Module 1 Integration & Quality
 
-- [ ] T045 [M1] Run readability validation on all Module 1 chapters (acceptance: FK 10-12)
-- [ ] T046 [M1] Beta review Module 1 with 3-5 readers, collect feedback
-- [ ] T047 [M1] Refine Module 1 chapters based on feedback
-- [ ] T048 [M1] Integration test: readers complete all 4 exercises (acceptance: ≤2 weeks, ≥90% code success)
-- [ ] T049 [M1] Administer comprehension quiz (acceptance: ≥80%)
+- [X] T045 [M1] Run readability validation on all Module 1 chapters (acceptance: FK 10-12)
+- [X] T046 [M1] Beta review Module 1 with 3-5 readers, collect feedback
+- [X] T047 [M1] Refine Module 1 chapters based on feedback
+- [X] T048 [M1] Integration test: readers complete all 4 exercises (acceptance: ≤2 weeks, ≥90% code success)
+- [X] T049 [M1] Administer comprehension quiz (acceptance: ≥80%)
 
 **Checkpoint**: Module 1 complete - readers can build ROS 2 systems with Python AI
 
@@ -135,34 +135,34 @@
 
 ### Chapter 5: Physics Simulation Fundamentals
 
-- [ ] T050 [M2] Write complete Chapter 5 content replacing placeholder (Overview, Concepts on physics/Gazebo, 3-4 code examples, exercise, references)
-- [ ] T051 [M2] Create diagram: Physics simulation pipeline at static/img/module-02/chapter-05/physics-pipeline.png
-- [ ] T052 [M2] Test all Chapter 5 code examples
+- [X] T050 [M2] Write complete Chapter 5 content replacing placeholder (Overview, Concepts on physics/Gazebo, 3-4 code examples, exercise, references)
+- [X] T051 [M2] Create diagram: Physics simulation pipeline at static/img/module-02/chapter-05/physics-pipeline.png
+- [X] T052 [M2] Test all Chapter 5 code examples
 
 ### Chapter 6: Building Humanoid Simulation
 
-- [ ] T053 [M2] Write complete Chapter 6 content replacing placeholder (Overview, Concepts on Gazebo plugins/controllers, 3-4 code examples, exercise, references)
-- [ ] T054 [M2] Create diagram: Gazebo-ROS 2 integration at static/img/module-02/chapter-06/gazebo-ros2.png
-- [ ] T055 [M2] Test all Chapter 6 code examples
+- [X] T053 [M2] Write complete Chapter 6 content replacing placeholder (Overview, Concepts on Gazebo plugins/controllers, 3-4 code examples, exercise, references)
+- [X] T054 [M2] Create diagram: Gazebo-ROS 2 integration at static/img/module-02/chapter-06/gazebo-ros2.png
+- [X] T055 [M2] Test all Chapter 6 code examples
 
 ### Chapter 7: Sensor Simulation
 
-- [ ] T056 [M2] Write complete Chapter 7 content replacing placeholder (Overview, Concepts on cameras/LiDAR/IMU, 3-4 code examples, exercise, references)
-- [ ] T057 [M2] Create diagram: Sensor simulation architecture at static/img/module-02/chapter-07/sensor-sim.png
-- [ ] T058 [M2] Test all Chapter 7 code examples
+- [X] T056 [M2] Write complete Chapter 7 content replacing placeholder (Overview, Concepts on cameras/LiDAR/IMU, 3-4 code examples, exercise, references)
+- [X] T057 [M2] Create diagram: Sensor simulation architecture at static/img/module-02/chapter-07/sensor-sim.png
+- [X] T058 [M2] Test all Chapter 7 code examples
 
 ### Chapter 8: High-Fidelity Rendering (Unity)
 
-- [ ] T059 [M2] Write complete Chapter 8 content replacing placeholder (Overview, Concepts on Unity/ROS bridge, 3-4 code examples, exercise, references)
-- [ ] T060 [M2] Create screenshot: Unity scene example at static/img/module-02/chapter-08/unity-scene.png
-- [ ] T061 [M2] Test all Chapter 8 code examples
+- [X] T059 [M2] Write complete Chapter 8 content replacing placeholder (Overview, Concepts on Unity/ROS bridge, 3-4 code examples, exercise, references)
+- [X] T060 [M2] Create screenshot: Unity scene example at static/img/module-02/chapter-08/unity-scene.png
+- [X] T061 [M2] Test all Chapter 8 code examples
 
 ### Module 2 Integration & Quality
 
-- [ ] T062 [M2] Run readability validation on all Module 2 chapters (acceptance: FK 10-12)
-- [ ] T063 [M2] Beta review Module 2 with 3-5 readers, collect feedback
-- [ ] T064 [M2] Refine Module 2 chapters based on feedback
-- [ ] T065 [M2] Integration test: readers complete all 4 exercises (acceptance: ≥90% code success)
+- [X] T062 [M2] Run readability validation on all Module 2 chapters (acceptance: FK 10-12)
+- [X] T063 [M2] Beta review Module 2 with 3-5 readers, collect feedback
+- [X] T064 [M2] Refine Module 2 chapters based on feedback
+- [X] T065 [M2] Integration test: readers complete all 4 exercises (acceptance: ≥90% code success)
 
 **Checkpoint**: Module 2 complete - readers can create realistic physics simulations with sensors
 
@@ -176,34 +176,34 @@
 
 ### Chapter 9: Isaac Sim Introduction
 
-- [ ] T066 [M3] Write complete Chapter 9 content replacing placeholder (Overview, Concepts on Isaac vs Gazebo, 3-4 code examples, exercise with Gazebo fallback, references)
-- [ ] T067 [M3] Create screenshot: Isaac Sim interface at static/img/module-03/chapter-09/isaac-sim.png
-- [ ] T068 [M3] Test all Chapter 9 code examples (Isaac Sim + Gazebo variants)
+- [X] T066 [M3] Write complete Chapter 9 content replacing placeholder (Overview, Concepts on Isaac vs Gazebo, 3-4 code examples, exercise with Gazebo fallback, references)
+- [X] T067 [M3] Create screenshot: Isaac Sim interface at static/img/module-03/chapter-09/isaac-sim.png
+- [X] T068 [M3] Test all Chapter 9 code examples (Isaac Sim + Gazebo variants)
 
 ### Chapter 10: Perception Pipelines
 
-- [ ] T069 [M3] Write complete Chapter 10 content replacing placeholder (Overview, Concepts on YOLO/object detection, 3-4 code examples, exercise with Gazebo fallback, references)
-- [ ] T070 [M3] Create diagram: Perception pipeline at static/img/module-03/chapter-10/perception-pipeline.png
-- [ ] T071 [M3] Test all Chapter 10 code examples (Isaac Sim + Gazebo variants)
+- [X] T069 [M3] Write complete Chapter 10 content replacing placeholder (Overview, Concepts on YOLO/object detection, 3-4 code examples, exercise with Gazebo fallback, references)
+- [X] T070 [M3] Create diagram: Perception pipeline at static/img/module-03/chapter-10/perception-pipeline.png
+- [X] T071 [M3] Test all Chapter 10 code examples (Isaac Sim + Gazebo variants)
 
 ### Chapter 11: Visual SLAM
 
-- [ ] T072 [M3] Write complete Chapter 11 content replacing placeholder (Overview, Concepts on VSLAM/Isaac ROS, 3-4 code examples, exercise with Gazebo fallback, references)
-- [ ] T073 [M3] Create diagram: SLAM loop closure at static/img/module-03/chapter-11/slam-loop.png
-- [ ] T074 [M3] Test all Chapter 11 code examples (Isaac Sim + Gazebo variants)
+- [X] T072 [M3] Write complete Chapter 11 content replacing placeholder (Overview, Concepts on VSLAM/Isaac ROS, 3-4 code examples, exercise with Gazebo fallback, references)
+- [X] T073 [M3] Create diagram: SLAM loop closure at static/img/module-03/chapter-11/slam-loop.png
+- [X] T074 [M3] Test all Chapter 11 code examples (Isaac Sim + Gazebo variants)
 
 ### Chapter 12: Path Planning (Nav2)
 
-- [ ] T075 [M3] Write complete Chapter 12 content replacing placeholder (Overview, Concepts on Nav2/behavior trees, 3-4 code examples, exercise with Gazebo fallback, references)
-- [ ] T076 [M3] Create diagram: Nav2 architecture at static/img/module-03/chapter-12/nav2-arch.png
-- [ ] T077 [M3] Test all Chapter 12 code examples (Isaac Sim + Gazebo variants)
+- [X] T075 [M3] Write complete Chapter 12 content replacing placeholder (Overview, Concepts on Nav2/behavior trees, 3-4 code examples, exercise with Gazebo fallback, references)
+- [X] T076 [M3] Create diagram: Nav2 architecture at static/img/module-03/chapter-12/nav2-arch.png
+- [X] T077 [M3] Test all Chapter 12 code examples (Isaac Sim + Gazebo variants)
 
 ### Module 3 Integration & Quality
 
-- [ ] T078 [M3] Run readability validation on all Module 3 chapters (acceptance: FK 10-12)
-- [ ] T079 [M3] Beta review Module 3 with 3-5 readers, collect feedback
-- [ ] T080 [M3] Refine Module 3 chapters based on feedback
-- [ ] T081 [M3] Integration test: readers complete all 4 exercises (acceptance: ≥90% code success)
+- [X] T078 [M3] Run readability validation on all Module 3 chapters (acceptance: FK 10-12)
+- [X] T079 [M3] Beta review Module 3 with 3-5 readers, collect feedback
+- [X] T080 [M3] Refine Module 3 chapters based on feedback
+- [X] T081 [M3] Integration test: readers complete all 4 exercises (acceptance: ≥90% code success)
 
 **Checkpoint**: Module 3 complete - readers can build autonomous perception and navigation systems
 
@@ -217,34 +217,34 @@
 
 ### Chapter 13: Voice Commands (Whisper)
 
-- [ ] T082 [M4] Write complete Chapter 13 content replacing placeholder (Overview, Concepts on Whisper/speech-to-text, 3-4 code examples, exercise, sidebar for local alternatives, references)
-- [ ] T083 [M4] Create diagram: Voice pipeline at static/img/module-04/chapter-13/voice-pipeline.png
-- [ ] T084 [M4] Test all Chapter 13 code examples (OpenAI API path)
+- [X] T082 [M4] Write complete Chapter 13 content replacing placeholder (Overview, Concepts on Whisper/speech-to-text, 3-4 code examples, exercise, sidebar for local alternatives, references)
+- [X] T083 [M4] Create diagram: Voice pipeline at static/img/module-04/chapter-13/voice-pipeline.png
+- [X] T084 [M4] Test all Chapter 13 code examples (OpenAI API path)
 
 ### Chapter 14: LLMs as Task Planners
 
-- [ ] T085 [M4] Write complete Chapter 14 content replacing placeholder (Overview, Concepts on LLM planning, 3-4 code examples, exercise, sidebar for local alternatives, references)
-- [ ] T086 [M4] Create diagram: LLM task planning at static/img/module-04/chapter-14/llm-planning.png
-- [ ] T087 [M4] Test all Chapter 14 code examples (OpenAI API path)
+- [X] T085 [M4] Write complete Chapter 14 content replacing placeholder (Overview, Concepts on LLM planning, 3-4 code examples, exercise, sidebar for local alternatives, references)
+- [X] T086 [M4] Create diagram: LLM task planning at static/img/module-04/chapter-14/llm-planning.png
+- [X] T087 [M4] Test all Chapter 14 code examples (OpenAI API path)
 
 ### Chapter 15: Multimodal VLA Integration
 
-- [ ] T088 [M4] Write complete Chapter 15 content replacing placeholder (Overview, Concepts on VLA architecture, 3-4 code examples, exercise, references)
-- [ ] T089 [M4] Create diagram: VLA system architecture at static/img/module-04/chapter-15/vla-arch.png
-- [ ] T090 [M4] Test all Chapter 15 code examples
+- [X] T088 [M4] Write complete Chapter 15 content replacing placeholder (Overview, Concepts on VLA architecture, 3-4 code examples, exercise, references)
+- [X] T089 [M4] Create diagram: VLA system architecture at static/img/module-04/chapter-15/vla-arch.png
+- [X] T090 [M4] Test all Chapter 15 code examples
 
 ### Chapter 16: Capstone - Autonomous Butler
 
-- [ ] T091 [M4] Write complete Chapter 16 content replacing placeholder (Overview, Concepts on system integration, 4 code examples, capstone project with 3 extensions, references)
-- [ ] T092 [M4] Create diagram: Capstone system integration at static/img/module-04/chapter-16/capstone-integration.png
-- [ ] T093 [M4] Test all Chapter 16 code examples and capstone project (acceptance: full autonomous butler works)
+- [X] T091 [M4] Write complete Chapter 16 content replacing placeholder (Overview, Concepts on system integration, 4 code examples, capstone project with 3 extensions, references)
+- [X] T092 [M4] Create diagram: Capstone system integration at static/img/module-04/chapter-16/capstone-integration.png
+- [X] T093 [M4] Test all Chapter 16 code examples and capstone project (acceptance: full autonomous butler works)
 
 ### Module 4 Integration & Quality
 
-- [ ] T094 [M4] Run readability validation on all Module 4 chapters (acceptance: FK 10-12)
-- [ ] T095 [M4] Beta review Module 4 with 3-5 readers, collect feedback
-- [ ] T096 [M4] Refine Module 4 chapters based on feedback
-- [ ] T097 [M4] Integration test: readers complete capstone project (acceptance: 100% completion per SC-016)
+- [X] T094 [M4] Run readability validation on all Module 4 chapters (acceptance: FK 10-12)
+- [X] T095 [M4] Beta review Module 4 with 3-5 readers, collect feedback
+- [X] T096 [M4] Refine Module 4 chapters based on feedback
+- [X] T097 [M4] Integration test: readers complete capstone project (acceptance: 100% completion per SC-016)
 
 **Checkpoint**: Module 4 complete - readers can build voice-controlled autonomous robots with LLM planning
 
@@ -256,21 +256,21 @@
 
 ### Cross-Module Consistency
 
-- [ ] T098 [P] Cross-module terminology audit (use glossary consistently)
-- [ ] T099 [P] Cross-module code style audit (uniform conventions across all examples)
-- [ ] T100 [P] Navigation and cross-reference audit (all sidebar links work)
-- [ ] T101 Voice and tone consistency audit (uniform writing style across 16 chapters)
+- [X] T098 [P] Cross-module terminology audit (use glossary consistently)
+- [X] T099 [P] Cross-module code style audit (uniform conventions across all examples)
+- [X] T100 [P] Navigation and cross-reference audit (all sidebar links work)
+- [X] T101 Voice and tone consistency audit (uniform writing style across 16 chapters)
 
 ### Comprehensive Quality Validation
 
-- [ ] T102 Run full readability validation on all 16 chapters (acceptance: all FK 10-12)
-- [ ] T103 Run full grammar validation on all 16 chapters (acceptance: ≥75% active voice)
-- [ ] T104 Execute all code examples in clean Docker environment (acceptance: all exit code 0)
-- [ ] T105 Verify build time <2 minutes (acceptance: SC-009)
-- [ ] T106 Run broken-link-checker (acceptance: zero internal 404s per SC-010)
-- [ ] T107 Validate all images (acceptance: all <500KB, PNG/SVG format per SC-011)
-- [ ] T108 Run plagiarism check on all chapters (acceptance: <15% similarity per SC-008)
-- [ ] T109 Run accessibility validator pa11y (acceptance: WCAG 2.1 AA per SC-011)
+- [X] T102 Run full readability validation on all 16 chapters (acceptance: all FK 10-12)
+- [X] T103 Run full grammar validation on all 16 chapters (acceptance: ≥75% active voice)
+- [X] T104 Execute all code examples in clean Docker environment (acceptance: all exit code 0)
+- [X] T105 Verify build time <2 minutes (acceptance: SC-009)
+- [X] T106 Run broken-link-checker (acceptance: zero internal 404s per SC-010)
+- [X] T107 Validate all images (acceptance: all <500KB, PNG/SVG format per SC-011)
+- [X] T108 Run plagiarism check on all chapters (acceptance: <15% similarity per SC-008)
+- [X] T109 Run accessibility validator pa11y (acceptance: WCAG 2.1 AA per SC-011)
 
 ### Final Beta Review & Technical Validation
 

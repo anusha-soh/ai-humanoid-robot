@@ -1,0 +1,3 @@
+# LLM Planning Diagram
+# Diagram showing the LLM task planning process:
+# Natural Language -> LLM Prompt -> Task Decomposition -> Action Sequence -> ROS 2 Services

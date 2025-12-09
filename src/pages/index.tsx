@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+// import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -20,8 +20,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/intro">
+            Start Reading →
           </Link>
         </div>
       </div>
@@ -37,7 +37,22 @@ export default function Home(): ReactNode {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <div className="container" style={{padding: '2rem 0'}}>
+          <div className="row">
+            <div className="col col--4">
+              <h3>🤖 ROS 2 Foundations</h3>
+              <p>Master Robot Operating System 2, the industry standard for building robotic applications.</p>
+            </div>
+            <div className="col col--4">
+              <h3>🎮 Simulation First</h3>
+              <p>Learn with Gazebo and Isaac Sim - no hardware required to build autonomous robots.</p>
+            </div>
+            <div className="col col--4">
+              <h3>🧠 Vision-Language-Action</h3>
+              <p>Build autonomous humanoid robots with LLMs, computer vision, and advanced planning.</p>
+            </div>
+          </div>
+        </div>
       </main>
     </Layout>
   );
