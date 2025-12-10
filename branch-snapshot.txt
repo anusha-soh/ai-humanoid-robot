@@ -1,0 +1,5 @@
+* 001-physical-ai-book
+  master
+  remotes/origin/001-physical-ai-book
+  remotes/origin/improve-constitution-standards
+  remotes/origin/master
