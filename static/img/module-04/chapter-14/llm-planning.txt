@@ -1,0 +1,3 @@
+LLM Task Planning Diagram Placeholder
+======================================
+Flow: Natural Language Command → LLM Planner → Action Sequence → Action Executor → Robot → Feedback Loop

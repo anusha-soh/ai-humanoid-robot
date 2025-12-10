@@ -1,0 +1,4 @@
+Capstone Integration Diagram Placeholder
+=========================================
+Complete Stack: User Interface → Cognitive Layer (LLM) → Perception (Vision) → Navigation (Nav2) → Manipulation → Hardware
+End-to-End Flow: Voice Command → Planning → Navigation → Detection → Grasping → Return → Report

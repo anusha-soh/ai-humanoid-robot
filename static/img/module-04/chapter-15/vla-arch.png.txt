@@ -1,0 +1,4 @@
+# VLA Architecture Diagram
+# Diagram showing the Vision-Language-Action system architecture:
+# Vision Input -> Language Processing -> Action Execution -> Robot Control
+# Integration of perception, planning, and control systems

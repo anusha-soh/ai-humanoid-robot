@@ -1,0 +1,4 @@
+# Capstone Integration Diagram
+# Diagram showing the complete autonomous butler system integration:
+# Voice Command -> LLM Planning -> Perception -> Navigation -> Manipulation -> Reporting
+# All subsystems connected in a unified architecture

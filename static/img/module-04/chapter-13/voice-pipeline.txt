@@ -1,0 +1,3 @@
+Voice Pipeline Diagram Placeholder
+===================================
+Flow: Audio Input → Preprocessing → Whisper API → Text Output → ROS 2 Topic → Command Parser → Robot Actions

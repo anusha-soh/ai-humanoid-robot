@@ -1,0 +1,3 @@
+VLA Architecture Diagram Placeholder
+=====================================
+Integration: Vision System + Language System + Action System coordinated by VLA Orchestrator with Closed-Loop Feedback
