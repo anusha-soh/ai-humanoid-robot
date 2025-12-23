@@ -2,6 +2,7 @@ export interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
   sources?: Source[];
+  conversation_id?: string;
 }
 
 export interface Source {
@@ -21,9 +22,11 @@ export class ChatClient {
   private baseUrl: string;
 
   constructor() {
-    this.baseUrl = process.env.NODE_ENV === 'production'
-      ? 'https://your-backend.vercel.app'  // Update after deployment
-      : 'http://localhost:8000';
+    // Use REACT_APP_API_BASE_URL from environment, fallback to localhost for development
+    this.baseUrl = process.env.REACT_APP_API_BASE_URL ||
+                  (process.env.NODE_ENV === 'production'
+                    ? 'https://anusha-soh-rag-chatbot.hf.space'  // HF Spaces backend
+                    : 'http://localhost:8000');
   }
 
   async *streamChat(request: ChatRequestBody): AsyncGenerator<ChatMessage, void, unknown> {
@@ -53,7 +56,13 @@ export class ChatClient {
         if (line.startsWith('data: ')) {
           const data = JSON.parse(line.slice(6));
 
-          if (data.type === 'token') {
+          if (data.type === 'metadata') {
+            yield {
+              role: 'assistant',
+              content: '',
+              conversation_id: data.conversation_id
+            };
+          } else if (data.type === 'token') {
             yield { role: 'assistant', content: data.content };
           } else if (data.type === 'done') {
             yield { role: 'assistant', content: '', sources: data.sources };
