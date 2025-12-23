@@ -22,11 +22,13 @@ export class ChatClient {
   private baseUrl: string;
 
   constructor() {
-    // Use REACT_APP_API_BASE_URL from environment, fallback to localhost for development
-    this.baseUrl = process.env.REACT_APP_API_BASE_URL ||
-                  (process.env.NODE_ENV === 'production'
-                    ? 'https://anusha-soh-rag-chatbot.hf.space'  // HF Spaces backend
-                    : 'http://localhost:8000');
+    // Detect environment based on hostname
+    const isProduction = typeof window !== 'undefined' &&
+      !window.location.hostname.includes('localhost');
+
+    this.baseUrl = isProduction
+      ? 'https://anusha-soh-rag-chatbot.hf.space'  // HF Spaces backend
+      : 'http://localhost:8000';
   }
 
   async *streamChat(request: ChatRequestBody): AsyncGenerator<ChatMessage, void, unknown> {
